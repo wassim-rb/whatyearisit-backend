@@ -5,5 +5,9 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
+router.get('/year', (req, res) => {
+  const date = new Date().getFullYear().toString();
+  res.json({ date : date})
+});
 
 module.exports = router;
